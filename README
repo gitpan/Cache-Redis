@@ -13,8 +13,10 @@ SYNOPSIS
         $cache->remove('key');
 
 DESCRIPTION
-    This module is for cache of Redis backend having <Cache::Cache> like
+    This module is for cache of Redis backend having Cache::Cache like
     interface.
+
+    THIS IS A DEVELOPMENT RELEASE. API MAY CHANGE WITHOUT NOTICE.
 
 INTERFACE
   Methods
@@ -34,7 +36,7 @@ INTERFACE
         server and returns immediately, not waiting the reply. This avoids
         the round-trip latency at a cost of uncertain command outcome.
 
-    "serializer ('MessagePack')"
+    "serializer ('Storable')"
         Serializer. 'MessagePack' and 'Storable' are usable. if
         `serialize_methods` option is specified, this option is ignored.
 
@@ -62,17 +64,6 @@ INTERFACE
 
    "$obj->nowait_push"
     Wait all response from redis. This is intended for "$obj->nowait".
-
-FAQ
-  How to set binary or blessed object to cache?
-    Default serializer using Data::MessagePack can't handle binary and
-    blessed objects (for performance).
-
-    If you want to set them. Most easiest way is to set constructor option
-    `serializer` to 'Storable'.
-
-    Or you can set constructor option `serialize_methods` for more frequency
-    handling.
 
 DEPENDENCIES
     Perl 5.8.1 or later.

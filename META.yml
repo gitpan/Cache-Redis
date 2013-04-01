@@ -20,11 +20,11 @@ no_index:
 provides:
   Cache::Redis:
     file: lib/Cache/Redis.pm
-    version: 0.01
+    version: 0.02
 requires:
   Data::MessagePack: 0.36
   Redis: 0
   perl: 5.008001
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.01
+version: 0.02
