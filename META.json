@@ -4,7 +4,7 @@
       "Masayuki Matsuki <y.songmu@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.4.0",
+   "generated_by" : "Minilla/v0.4.1",
    "license" : "perl_5",
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -26,7 +26,7 @@
       "build" : {
          "requires" : {
             "Test::More" : "0.98",
-            "Test::Requires" : "0.06"
+            "Test::RedisServer" : "0"
          }
       },
       "configure" : {
@@ -55,7 +55,7 @@
    "provides" : {
       "Cache::Redis" : {
          "file" : "lib/Cache/Redis.pm",
-         "version" : "0.03"
+         "version" : "0.04"
       }
    },
    "release_status" : "stable",
@@ -69,5 +69,5 @@
          "web" : "https://github.com/Songmu/p5-Cache-Redis"
       }
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }

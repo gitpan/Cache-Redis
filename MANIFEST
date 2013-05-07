@@ -11,9 +11,6 @@ t/001_basic.t
 t/002_namespace.t
 t/003_messagepack.t
 xt/perlcritic.t
-xt/pod.t
 xt/podcoverage.t
-xt/podspell.t
-xt/podsynopsis.t
 META.yml
 MANIFEST
