@@ -1,11 +1,11 @@
 Build.PL
 Changes
-lib/Cache/Redis.pm
 LICENSE
-MANIFEST			This list of files
 META.json
-META.yml
-README
+README.md
+author/requires.cpanm
+cpanfile
+lib/Cache/Redis.pm
 t/000_load.t
 t/001_basic.t
 t/002_namespace.t
@@ -15,3 +15,5 @@ xt/pod.t
 xt/podcoverage.t
 xt/podspell.t
 xt/podsynopsis.t
+META.yml
+MANIFEST

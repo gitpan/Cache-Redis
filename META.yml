@@ -1,14 +1,16 @@
 ---
 abstract: 'Redis client specialized for cache'
 author:
-  - 'Masayuki Matsuki E<lt>y.songmu@gmail.comE<gt>'
+  - 'Masayuki Matsuki <y.songmu@gmail.com>'
 build_requires:
   Test::More: 0.98
   Test::Requires: 0.06
 configure_requires:
+  CPAN::Meta: 0
+  CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Minilla/v0.4.0, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -16,15 +18,23 @@ meta-spec:
 name: Cache-Redis
 no_index:
   directory:
+    - t
+    - xt
     - inc
+    - share
+    - eg
+    - examples
+    - author
 provides:
   Cache::Redis:
     file: lib/Cache/Redis.pm
-    version: 0.02
+    version: 0.03
 requires:
   Data::MessagePack: 0.36
   Redis: 0
   perl: 5.008001
 resources:
-  license: http://dev.perl.org/licenses/
-version: 0.02
+  bugtracker: https://github.com/Songmu/p5-Cache-Redis/issues
+  homepage: https://github.com/Songmu/p5-Cache-Redis
+  repository: git://github.com/Songmu/p5-Cache-Redis.git
+version: 0.03

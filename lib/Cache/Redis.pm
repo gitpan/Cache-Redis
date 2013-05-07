@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 use Redis;
 
 my $_mp;
@@ -97,8 +97,7 @@ sub set {
     $expire ||= $self->{default_expires_in};
 
     my $redis = $self->{redis};
-    $redis->set($key, $self->{serialize}->($value), sub {});
-    $redis->expire($key, $expire, sub {});
+    $redis->setex($key, $expire, $self->{serialize}->($value), sub {});
 
     $redis->wait_all_responses unless $self->{nowait};
 }
@@ -117,7 +116,11 @@ sub get_or_set {
 sub remove {
     my ($self, $key) = @_;
 
+    my $data = $self->get($key);
+    $key = $self->{namespace} . $key;
     $self->{redis}->del($key);
+
+    $data;
 }
 
 sub nowait_push {
