@@ -1,5 +1,8 @@
 Revision history for Perl extension Cache::Redis
 
+0.05 2013-05-09T02:38:06Z
+    - Do not run test case when redis-server command is not available
+
 0.04 2013-05-07T10:31:33Z
     - fixup packaging and dependencies.
 
