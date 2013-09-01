@@ -3,13 +3,13 @@ Changes
 LICENSE
 META.json
 README.md
-author/requires.cpanm
 cpanfile
 lib/Cache/Redis.pm
 t/000_load.t
 t/001_basic.t
 t/002_namespace.t
 t/003_messagepack.t
+t/004_json.t
 xt/perlcritic.t
 xt/podcoverage.t
 META.yml

@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 use Redis;
 
 my $_mp;
@@ -65,6 +65,11 @@ sub new {
             require Data::MessagePack;
             $serialize   = \&_mp_serialize;
             $deserialize = \&_mp_deserialize;
+        }
+        elsif ($serializer eq 'JSON') {
+            require JSON::XS;
+            $serialize   = _mk_serialize   \&JSON::XS::encode_json;
+            $deserialize = _mk_deserialize \&JSON::XS::decode_json;
         }
     }
     $redis = Redis->new(
@@ -186,7 +191,7 @@ is specified, this option is ignored.
 =item C<serialize_methods (undef)>
 
 The value is a reference to an array holding two code references for serialization and
-deserialization routines respectively.
+de-serialization routines respectively.
 
 =item server (undef)
 
@@ -214,7 +219,7 @@ run I<$code> and cache I<$expiration> seconds and return the value.
 
 =head3 C<< $obj->nowait_push >>
 
-Wait all response from redis. This is intended for C<< $obj->nowait >>.
+Wait all response from Redis. This is intended for C<< $obj->nowait >>.
 
 =head1 DEPENDENCIES
 
