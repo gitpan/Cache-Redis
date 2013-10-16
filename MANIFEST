@@ -3,6 +3,7 @@ Changes
 LICENSE
 META.json
 README.md
+author/benchmark.pl
 cpanfile
 lib/Cache/Redis.pm
 t/000_load.t
