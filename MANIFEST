@@ -13,6 +13,7 @@ t/002_namespace.t
 t/003_messagepack.t
 t/004_json.t
 t/005_multi.t
+t/006_redis_option.t
 xt/perlcritic.t
 xt/podcoverage.t
 META.yml
