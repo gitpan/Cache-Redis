@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Songmu/p5-Cache-Redis.png?branch=master)](https://travis-ci.org/Songmu/p5-Cache-Redis) [![Coverage Status](https://coveralls.io/repos/Songmu/p5-Cache-Redis/badge.png?branch=master)](https://coveralls.io/r/Songmu/p5-Cache-Redis?branch=master)
 # NAME
 
 Cache::Redis - Redis client specialized for cache
@@ -64,9 +65,18 @@ the behaviour of the cache (defaults in parentheses):
 
 Set a stuff to cache.
 
+### `$obj->set_multi([$key, $value, $expire], [$key, $value])`
+
+Set multiple stuffs to cache. stuffs is array reference.
+
 ### `my $stuff = $obj->get($key)`
 
 Get a stuff from cache.
+
+### `my $res = $obj->get_multi(@keys)`
+
+Get multiple stuffs as hash reference from cache. `@keys` should be array.
+A key is not stored on cache don't be contain `$res`.
 
 ### `$obj->remove($key)`
 

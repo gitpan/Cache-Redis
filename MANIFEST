@@ -6,11 +6,13 @@ README.md
 author/benchmark.pl
 cpanfile
 lib/Cache/Redis.pm
+minil.toml
 t/000_load.t
 t/001_basic.t
 t/002_namespace.t
 t/003_messagepack.t
 t/004_json.t
+t/005_multi.t
 xt/perlcritic.t
 xt/podcoverage.t
 META.yml
