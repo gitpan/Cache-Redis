@@ -64,7 +64,7 @@
    "provides" : {
       "Cache::Redis" : {
          "file" : "lib/Cache/Redis.pm",
-         "version" : "0.09"
+         "version" : "0.10"
       }
    },
    "release_status" : "stable",
@@ -78,7 +78,7 @@
          "web" : "https://github.com/Songmu/p5-Cache-Redis"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_contributors" : [
       "soh335 <sugarbabe335@gmail.com>"
    ]

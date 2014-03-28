@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 use Module::Load;
 
@@ -115,8 +115,9 @@ sub get_multi {
     my $i = 0;
     my $ret = {};
     for my $key ( @keys ) {
-        next unless defined $data[$i];
-        $ret->{$key} = $self->{deserialize}->($data[$i]);
+        if ( defined $data[$i] ) {
+            $ret->{$key} = $self->{deserialize}->($data[$i]);
+        }
         $i++;
     }
 
